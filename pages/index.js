@@ -1,13 +1,11 @@
+import AddSection from './../components/AddSection'
 export default function Home() {
   return (
-    <div className='flex items-center justify-center'>
-      <h1 className='heading-4'>
-        next + react-content-loader + react-html-parser + next-pwa + next-sitemap + nprogress
-      </h1>
-      <hr />
-      <h1 className='heading-4'>
-        eslint + eslint-config-next + autoprefixer + postcss + tailwindcss
-      </h1>
+    <div className='max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
+      <div className='px-4 py-6 sm:px-0'>
+        <div className='DROPPED'></div>
+        <AddSection />
+      </div>
     </div>
   )
 }
