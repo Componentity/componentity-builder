@@ -12,8 +12,6 @@
     <img src="./public/logo.png" alt="Logo componentity" height="100">
   </a>
 
-  <h3 align="center">Componentity - Boilerplates</h3>
-
   <p align="center">
     nextjs + react-content-loader + react-html-parser + next-pwa + next-sitemap + nprogress + tailwindcss
     <br />
