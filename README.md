@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://componentity.com">
-    <img src="./public/logo.png" alt="Logo componentity" height="100">
+    <img src="./public/logo.png" alt="Logo componentity" height="200">
   </a>
 
   <p align="center">
