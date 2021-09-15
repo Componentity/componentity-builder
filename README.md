@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://componentity.com">
-    <img src="https://github.com/Componentity/componentity/raw/master/assets/logos/componentity.png" alt="Logo componentity" height="100">
+    <img src="./public/logo.png" alt="Logo componentity" height="100">
   </a>
 
   <h3 align="center">Componentity - Boilerplates</h3>
