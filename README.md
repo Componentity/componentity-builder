@@ -27,8 +27,21 @@
 
 ### Built With
 
+|                                                     Nextjs                                                     |                               TailwindCSS                               |                                                     React Content Loader                                                      |
+| :------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+| ![Nextjs](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/330px-Nextjs-logo.svg.png) | ![TailwindCSS](https://miro.medium.com/max/1400/0*A70w-WrmSaBVxwAm.png) | ![React Content Loader](https://user-images.githubusercontent.com/4838076/115597774-8e0ccc00-a2d1-11eb-853d-f24cfe9d4fea.png) |
+
+|                                  NProgress                                  |                                  Next-PWA                                  |                                  Next-Sitemap                                   |
+| :-------------------------------------------------------------------------: | :------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
+| ![nprogress](https://admin.micko.dev/uploads/next_nprogress_d377cb51fa.png) | ![NextPWA](https://miro.medium.com/max/1400/1*FcvmmciAIUhpF1t-9IO8fQ.jpeg) | ![Next Sitemap](https://miro.medium.com/max/1400/1*ihjhRdaAJEiLA0jcrNKCNA.jpeg) |
+
 - [Nextjs](https://nextjs.org)
-- [TailwindCss](https://tailwindcss.com)
+- [TailwindCss](https://www.npmjs.com/package/tailwindcss)
+- [Next-PWA](https://www.npmjs.com/package/next-pwa)
+- [Next-Sitemap](https://www.npmjs.com/package/next-sitemap)
+- [NProgress](https://www.npmjs.com/package/nprogress)
+- [React-Html-Parser](https://www.npmjs.com/package/react-html-parser)
+- [React-Content-Loader](https://www.npmjs.com/package/react-content-loader)
 
 <!-- GETTING STARTED -->
 
