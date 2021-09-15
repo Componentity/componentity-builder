@@ -35,13 +35,9 @@
 | :-------------------------------------------------------------------------: | :------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
 | ![nprogress](https://admin.micko.dev/uploads/next_nprogress_d377cb51fa.png) | ![NextPWA](https://miro.medium.com/max/1400/1*FcvmmciAIUhpF1t-9IO8fQ.jpeg) | ![Next Sitemap](https://miro.medium.com/max/1400/1*ihjhRdaAJEiLA0jcrNKCNA.jpeg) |
 
-- [Nextjs](https://nextjs.org)
-- [TailwindCss](https://www.npmjs.com/package/tailwindcss)
-- [Next-PWA](https://www.npmjs.com/package/next-pwa)
-- [Next-Sitemap](https://www.npmjs.com/package/next-sitemap)
-- [NProgress](https://www.npmjs.com/package/nprogress)
-- [React-Html-Parser](https://www.npmjs.com/package/react-html-parser)
-- [React-Content-Loader](https://www.npmjs.com/package/react-content-loader)
+|                                 React-Html-Parser                                 |
+| :-------------------------------------------------------------------------------: |
+| ![React-Html-Parser](https://flaviocopes.com/how-to-render-html-react/banner.png) |
 
 <!-- GETTING STARTED -->
 
