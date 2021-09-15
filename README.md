@@ -1,34 +1,106 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://componentity.com">
+    <img src="./public/logo.png" alt="Logo componentity" height="200">
+  </a>
+
+  <p align="center">
+    nextjs + react-content-loader + react-html-parser + next-pwa + next-sitemap + nprogress + tailwindcss
+    <br />
+    <br />
+    ·
+    <a href="https://github.com/componentity/nexttailpwa/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/componentity/nexttailpwa/issues">Request Feature</a>
+  </p>
+</p>
+
+### Built With
+
+|                                                     Nextjs                                                     |                               TailwindCSS                               |                                                     React Content Loader                                                      |
+| :------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+| ![Nextjs](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/330px-Nextjs-logo.svg.png) | ![TailwindCSS](https://miro.medium.com/max/1400/0*A70w-WrmSaBVxwAm.png) | ![React Content Loader](https://user-images.githubusercontent.com/4838076/115597774-8e0ccc00-a2d1-11eb-853d-f24cfe9d4fea.png) |
+
+|                                  NProgress                                  |                                  Next-PWA                                  |                                  Next-Sitemap                                   |
+| :-------------------------------------------------------------------------: | :------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
+| ![nprogress](https://admin.micko.dev/uploads/next_nprogress_d377cb51fa.png) | ![NextPWA](https://miro.medium.com/max/1400/1*FcvmmciAIUhpF1t-9IO8fQ.jpeg) | ![Next Sitemap](https://miro.medium.com/max/1400/1*ihjhRdaAJEiLA0jcrNKCNA.jpeg) |
+
+|                                 React-Html-Parser                                 |
+| :-------------------------------------------------------------------------------: |
+| ![React-Html-Parser](https://flaviocopes.com/how-to-render-html-react/banner.png) |
+
+<!-- GETTING STARTED -->
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repo
+   ```sh
+   git clone https://github.com/componentity/nexttailpwa.git
+   ```
+2. cd to the directory (nexttailpwa)
+   ```sh
+   cd nexttailpwa
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Happy Coding :smile:
+<!-- USAGE EXAMPLES -->
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Usage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Do not need to do all the basic npm installs for a Tailwind + Nextjs App with PWA and Sitemap Configurations all over again and again. Just clone the repo!
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+_For more examples, please refer to the [Componentity](https://componentity.com)_
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<!-- CONTRIBUTING -->
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Contributing
 
-## Learn More
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<!-- LICENSE -->
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+Distributed under the MIT License. See `LICENSE` for more information.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<!-- CONTACT -->
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contact
+
+Mr. Code - [@mymakarim](https://twitter.com/mymakarim) - ymakarim@gmail.com
+Meh Mohammadi - [@mehmoh41](https://github.com/mehmoh41) - moh.meh41@gmail.com
+
+Project Link: [https://github.com/componentity/nexttailpwa](https://github.com/componentity/nexttailpwa)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/badge/contributers-2-green.svg?style=for-the-badge
+[contributors-url]: https://github.com/componentity/nexttailpwa/graphs/contributors
+[forks-shield]: https://img.shields.io/badge/forks-2-blue.svg?style=for-the-badge
+[forks-url]: https://github.com/componentity/nexttailpwa/network/members
+[stars-shield]: https://img.shields.io/badge/stars-2-yellow.svg?style=for-the-badge
+[stars-url]: https://github.com/componentity/nexttailpwa/stargazers
+[issues-shield]: https://img.shields.io/badge/issues-0-orange.svg?style=for-the-badge
+[issues-url]: https://github.com/componentity/nexttailpwa/issues
+[license-shield]: https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge
+[license-url]: https://github.com/componentity/nexttailpwa/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/mymakarim
