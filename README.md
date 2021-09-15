@@ -1,7 +1,4 @@
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -13,29 +10,15 @@
   </a>
 
   <p align="center">
-    nextjs + react-content-loader + react-html-parser + next-pwa + next-sitemap + nprogress + tailwindcss
+    <b>Design Tailwind Templates</b> | <b>Hundereds of Sections</b> | <b>Save it in your account</b>
     <br />
     <br />
     ·
-    <a href="https://github.com/componentity/nexttailpwa/issues">Report Bug</a>
+    <a href="https://github.com/componentity/componentity-builder/issues">Report Bug</a>
     ·
-    <a href="https://github.com/componentity/nexttailpwa/issues">Request Feature</a>
+    <a href="https://github.com/componentity/componentity-builder/issues">Request Feature</a>
   </p>
 </p>
-
-### Built With
-
-|                                                     Nextjs                                                     |                               TailwindCSS                               |                                                     React Content Loader                                                      |
-| :------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
-| ![Nextjs](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/330px-Nextjs-logo.svg.png) | ![TailwindCSS](https://miro.medium.com/max/1400/0*A70w-WrmSaBVxwAm.png) | ![React Content Loader](https://user-images.githubusercontent.com/4838076/115597774-8e0ccc00-a2d1-11eb-853d-f24cfe9d4fea.png) |
-
-|                                  NProgress                                  |                                  Next-PWA                                  |                                  Next-Sitemap                                   |
-| :-------------------------------------------------------------------------: | :------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
-| ![nprogress](https://admin.micko.dev/uploads/next_nprogress_d377cb51fa.png) | ![NextPWA](https://miro.medium.com/max/1400/1*FcvmmciAIUhpF1t-9IO8fQ.jpeg) | ![Next Sitemap](https://miro.medium.com/max/1400/1*ihjhRdaAJEiLA0jcrNKCNA.jpeg) |
-
-|                                 React-Html-Parser                                 |
-| :-------------------------------------------------------------------------------: |
-| ![React-Html-Parser](https://flaviocopes.com/how-to-render-html-react/banner.png) |
 
 <!-- GETTING STARTED -->
 
@@ -43,11 +26,11 @@
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/componentity/nexttailpwa.git
+   git clone https://github.com/componentity/componentity-builder.git
    ```
-2. cd to the directory (nexttailpwa)
+2. cd to the directory (componentity-builder)
    ```sh
-   cd nexttailpwa
+   cd componentity-builder
    ```
 3. Install NPM packages
    ```sh
@@ -58,7 +41,8 @@
 
 ## Usage
 
-Do not need to do all the basic npm installs for a Tailwind + Nextjs App with PWA and Sitemap Configurations all over again and again. Just clone the repo!
+Componentity team has always been working on apps to make thing easy.
+Componentity-Builder is a Drag and Drop TailwindCss Website Builder that you can design awesome templates, sections and save them, show them and react on others' works!
 
 _For more examples, please refer to the [Componentity](https://componentity.com)_
 
@@ -87,20 +71,14 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Mr. Code - [@mymakarim](https://twitter.com/mymakarim) - ymakarim@gmail.com
 Meh Mohammadi - [@mehmoh41](https://github.com/mehmoh41) - moh.meh41@gmail.com
 
-Project Link: [https://github.com/componentity/nexttailpwa](https://github.com/componentity/nexttailpwa)
+Project Link: [https://github.com/componentity/componentity-builder](https://github.com/componentity/componentity-builder)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/badge/contributers-2-green.svg?style=for-the-badge
-[contributors-url]: https://github.com/componentity/nexttailpwa/graphs/contributors
-[forks-shield]: https://img.shields.io/badge/forks-2-blue.svg?style=for-the-badge
-[forks-url]: https://github.com/componentity/nexttailpwa/network/members
-[stars-shield]: https://img.shields.io/badge/stars-2-yellow.svg?style=for-the-badge
-[stars-url]: https://github.com/componentity/nexttailpwa/stargazers
-[issues-shield]: https://img.shields.io/badge/issues-0-orange.svg?style=for-the-badge
-[issues-url]: https://github.com/componentity/nexttailpwa/issues
+[contributors-url]: https://github.com/componentity/componentity-builder/graphs/contributors
 [license-shield]: https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge
-[license-url]: https://github.com/componentity/nexttailpwa/blob/master/LICENSE.txt
+[license-url]: https://github.com/componentity/componentity-builder/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/mymakarim
