@@ -7,7 +7,7 @@ export default function Nav() {
   }
   return (
     <nav className='bg-gray-800'>
-      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16'>
           <div className='flex items-center'>
             <div className='flex items-center  flex-wrap sm:flex-nowrap  '>
@@ -29,10 +29,7 @@ export default function Nav() {
                 </svg>
               </a>
               <p className='hidden lg:block text-sm text-gray-300 font-normal xl:border-l xl:border-gray-200 ml-3 xl:ml-4 xl:pl-4 xl:py-0.5'>
-                <span className='hidden xl:inline'>
-                  Beautiful UI components by the creators of Tailwind CSS
-                </span>
-                <span className='xl:hidden'>by the creators of Tailwind CSS</span>
+                <span className='hidden xl:inline'>Beautiful UI</span>
               </p>
             </div>
             <div className='hidden md:block'>
