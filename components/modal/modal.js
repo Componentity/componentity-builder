@@ -34,7 +34,11 @@ const Modal = ({ isShowing, hide, children }) =>
                     <div className='fixed inset-0 bg-black bg-opacity-25' aria-hidden='true'></div>
                   </div>
 
-                  {children}
+                  <main className='container mx-auto'>
+                    <section aria-labelledby='products-heading' className='p-4 sm:p-6 lg:p-8'>
+                      {children}
+                    </section>
+                  </main>
                 </div>
               </div>
             </div>

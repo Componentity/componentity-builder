@@ -82,7 +82,7 @@ export default function Data() {
         <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
           {data.map((project) => (
             <div key={project.id} className='PRODUCT group relative mb-3'>
-              <div className='border-4 border-white hover:border-indigo-600 p-1 w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden lg:h-80 lg:aspect-none'>
+              <div className='border-4 border-transparent hover:border-indigo-600 p-1 w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden lg:h-80 lg:aspect-none'>
                 <ImageComponentity
                   alt={project.image.formats.thumbnail.name}
                   src={project.image.formats.thumbnail.url}
@@ -97,7 +97,7 @@ export default function Data() {
           ))}
         </div>
       )}
-      <div className='bg-white py-3 flex items-center justify-end md:justify-between border-t border-gray-200'>
+      <div className='py-3 flex items-center justify-end md:justify-between border-t border-gray-200'>
         <div className='hidden md:inline-block'>
           <p className='text-sm text-gray-700'>
             Showing <span className='font-medium'>{filter.start + 1}</span> to{' '}
@@ -115,7 +115,7 @@ export default function Data() {
                 prevHandler()
               }}
               disabled={filter.start == 0}
-              className='disabled:cursor-not-allowed relative flex items-center justify-center inline-flex items-center px-2 py-2 rounded-l-md border-2 border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+              className='disabled:cursor-not-allowed relative flex items-center justify-center inline-flex items-center px-2 py-2 rounded-l-md border-2 border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50'
             >
               <svg
                 className='h-5 w-5'
@@ -145,7 +145,7 @@ export default function Data() {
               }}
               // Disable the Next start button until we know a next start is available
               disabled={filter.currentPage >= lastPage}
-              className='disabled:cursor-not-allowed relative inline-flex items-center px-2 py-2 rounded-r-md border-2 border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+              className='disabled:cursor-not-allowed relative inline-flex items-center px-2 py-2 rounded-r-md border-2 border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50'
             >
               <span>Next</span>
               <svg

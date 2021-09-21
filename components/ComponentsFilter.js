@@ -9,24 +9,16 @@ export default function ComponentsFilter() {
 
   return (
     <FilterContext.Provider value={filterValue}>
-      <main className='container mx-auto'>
-        <section aria-labelledby='products-heading' className='p-4 sm:p-6 lg:p-8'>
-          <h2 id='products-heading' className='sr-only'>
-            Products
-          </h2>
-
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-10'>
-            <div className='lg:col-span-2'>
-              <FilterCategories />
-            </div>
-            <div className='lg:col-span-10'>
-              <div className=''>
-                <Data />
-              </div>
-            </div>
+      <div className='grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-10'>
+        <div className='lg:col-span-2'>
+          <FilterCategories />
+        </div>
+        <div className='lg:col-span-10'>
+          <div className=''>
+            <Data />
           </div>
-        </section>
-      </main>
+        </div>
+      </div>
     </FilterContext.Provider>
   )
 }

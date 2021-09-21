@@ -50,7 +50,7 @@ export default function FilterCategories() {
         <h3 className='-my-3 flow-root'>
           <button
             type='button'
-            className='py-3 bg-white text-left w-full text-sm text-gray-400 hover:text-gray-500'
+            className='py-3 text-left w-full text-sm text-gray-400 hover:text-gray-500'
             aria-controls='filter-section-0'
             aria-expanded='false'
           >
