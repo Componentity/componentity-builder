@@ -1,6 +1,6 @@
 import Modal from './modal/modal'
 import useModal from './modal/useModal'
-
+import ComponentsFilter from './ComponentsFilter'
 export default function AddSection() {
   const { isShowing, toggle } = useModal()
 
@@ -12,7 +12,9 @@ export default function AddSection() {
       >
         Add Sections or Pages
       </button>
-      <Modal isShowing={isShowing} hide={toggle} />
+      <Modal isShowing={isShowing} hide={toggle}>
+        <ComponentsFilter />
+      </Modal>
     </div>
   )
 }

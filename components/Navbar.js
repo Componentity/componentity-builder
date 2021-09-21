@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Nav() {
+export default function Navbar() {
   const [isShowing, setIsShowing] = useState(false)
   function toggle() {
     setIsShowing(!isShowing)

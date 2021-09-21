@@ -1,11 +1,13 @@
-import Nav from './Nav'
+import Navbar from './Navbar'
+import Footer from './Footer'
 import Announcement from './Announcement'
 export default function Layout({ children }) {
   return (
     <>
       <Announcement />
-      <Nav />
+      <Navbar />
       {children}
+      <Footer />
     </>
   )
 }
