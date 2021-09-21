@@ -4,7 +4,7 @@ import FilterContext from './../components/context/filter-context'
 import FilterCategories from './FilterCategories'
 
 export default function ComponentsFilter() {
-  const [filter, setFilter] = useState('?_limit=10&_start=0')
+  const [filter, setFilter] = useState({ filter: '?_limit=2&_start=0', start: 0, currentPage: 1 })
   const filterValue = { filter, setFilter }
 
   return (

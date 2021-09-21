@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useQuery } from 'react-query'
 import FilterContext from './../components/context/filter-context'
 
-export default function Data() {
+function setCharAt(str, index, chr) {
+  if (index > str.length - 1) return str
+  return str.substring(0, index) + chr + str.substring(index + 1)
+}
+
+export default function FilterCategories() {
   const { filter, setFilter } = React.useContext(FilterContext)
-  console.log('FILTER: ', filter)
+  // console.log('FILTER: ', filter)
   const fetchCategories = () =>
     fetch('https://peaceful-ridge-63546.herokuapp.com/categories').then((res) => res.json())
 
@@ -14,22 +19,24 @@ export default function Data() {
     { keepPreviousData: true }
   )
 
-  let checkedCats = filter.split('&categories.slug=')
+  let checkedCats = filter.filter.split('&categories.slug=')
   checkedCats.shift()
 
   const handleChange = (evt) => {
     const name = evt.target.name
     const value = evt.target.checked
-    let newFilter = filter
+    let newFilter = setCharAt(filter.filter, 17, 0)
     if (value && !checkedCats.includes(name)) {
       // add to filter
-      newFilter = filter + `&categories.slug=${name}`
+      newFilter = newFilter + `&categories.slug=${name}`
     } else {
       // remove it from filter
-      newFilter = filter.replace(`&categories.slug=${name}`, '')
+      newFilter = newFilter.replace(`&categories.slug=${name}`, '')
     }
+    console.log('-----------------------')
     console.log('NEW FILTER: ', newFilter)
-    setFilter(newFilter)
+    console.log('-----------------------')
+    setFilter({ filter: newFilter, start: 0, currentPage: 1 })
   }
 
   return isLoading ? (
