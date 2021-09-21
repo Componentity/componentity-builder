@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useQuery } from 'react-query'
 import FilterContext from './../components/context/filter-context'
+import ImageComponentity from './ImageComponentity'
 export default function Data() {
   const { filter, setFilter } = React.useContext(FilterContext)
 
@@ -31,15 +32,14 @@ export default function Data() {
           {data.map((project) => (
             <div key={project.id} className='PRODUCT group relative mb-3'>
               <div className='border-4 border-white hover: border-indigo-600 p-1 w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none'>
-                <img
-                  src='https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg'
-                  alt='Front of men&#039;s Basic Tee in black.'
-                  className='w-full h-full object-center object-cover lg:w-full lg:h-full'
+                <ImageComponentity
+                  alt={project.image.formats.thumbnail.name}
+                  src={project.image.formats.thumbnail.url}
                 />
               </div>
               <div className='mt-4 text-left'>
                 <h3 className='text-sm text-gray-700 uppercase font-semibold'>
-                  <a href='#'>Basic Tee</a>
+                  <p>{project.name}</p>
                 </h3>
               </div>
             </div>
