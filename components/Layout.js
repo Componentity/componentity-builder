@@ -1,4 +1,5 @@
 import Nav from './Nav'
+import Footer from './Footer'
 import Announcement from './Announcement'
 export default function Layout({ children }) {
   return (
@@ -6,6 +7,7 @@ export default function Layout({ children }) {
       <Announcement />
       <Nav />
       {children}
+      <Footer />
     </>
   )
 }
