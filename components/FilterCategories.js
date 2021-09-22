@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from 'react-query'
 import FilterContext from './../components/context/filter-context'
+import CheckboxList from './skeleton/checkboxlist'
 
 function setCharAt(str, index, chr) {
   if (index > str.length - 1) return str
@@ -40,7 +41,14 @@ export default function FilterCategories() {
   }
 
   return isLoading ? (
-    <div>Loading...</div>
+    <div className='grid grid-cols-1 gap-y-4'>
+      <CheckboxList />
+      <CheckboxList />
+      <CheckboxList />
+      <CheckboxList />
+      <CheckboxList />
+      <CheckboxList />
+    </div>
   ) : isError ? (
     <div>Error: {error.message}</div>
   ) : (

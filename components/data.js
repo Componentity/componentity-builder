@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useQuery } from 'react-query'
 import FilterContext from './../components/context/filter-context'
 import ImageComponentity from './ImageComponentity'
+import YoutubeFresh from './skeleton/youtubefresh'
 
 function setCharAt(str, index, chr) {
   if (index > str.length - 1) return str
@@ -61,6 +62,7 @@ export default function Data() {
   let lastPage = Number(Math.ceil(count / limit))
   console.log('CURRENT PAGE: ', filter.currentPage)
   console.log('FILTER IN DATA: ', filter.filter)
+
   const fetchProjects = (filter) =>
     fetch('https://peaceful-ridge-63546.herokuapp.com/components' + filter).then((res) =>
       res.json()
@@ -75,7 +77,16 @@ export default function Data() {
   return (
     <div>
       {isLoading ? (
-        <div>Loading...</div>
+        <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
+          <YoutubeFresh />
+          <YoutubeFresh />
+          <YoutubeFresh />
+          <YoutubeFresh />
+          <YoutubeFresh />
+          <YoutubeFresh />
+          <YoutubeFresh />
+          <YoutubeFresh />
+        </div>
       ) : isError ? (
         <div>Error: {error.message}</div>
       ) : (
