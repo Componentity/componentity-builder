@@ -5,8 +5,12 @@ import FilterTypes from './FilterTypes'
 import FilterFrameworks from './FilterFrameworks'
 import FilterSections from './FilterSections'
 
-export default function ComponentsFilter({ defaultFilter = '?_limit=2&_start=0' }) {
-  const [filter, setFilter] = useState({ filter: defaultFilter, start: 0, currentPage: 1 })
+export default function ComponentsFilter({ addonFilter = '' }) {
+  const [filter, setFilter] = useState({
+    filter: `?_limit=2&_start=0${addonFilter}`,
+    start: 0,
+    currentPage: 1
+  })
   const filterValue = { filter, setFilter }
 
   return (
