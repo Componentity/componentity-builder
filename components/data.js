@@ -17,7 +17,7 @@ export default function Data() {
   // let startnumber = Number(limitnstart.split('&')[1].replace('_start=', ''))
 
   // const [start, setStart] = useState(startnumber)
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(null)
   // const [currentPage, setCurrentPage] = useState(1)
 
   const prevHandler = () => {
@@ -89,6 +89,8 @@ export default function Data() {
         </div>
       ) : isError ? (
         <div>Error: {error.message}</div>
+      ) : count == 0 ? (
+        <div className='mb-6'>No Results Found!</div>
       ) : (
         <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
           {data.map((project) => (
