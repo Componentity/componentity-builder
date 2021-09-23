@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useQuery } from 'react-query'
 import FilterContext from './../components/context/filter-context'
 import ImageComponentity from './ImageComponentity'
+import YoutubeFresh from './skeleton/youtubefresh'
 
 function setCharAt(str, index, chr) {
   if (index > str.length - 1) return str
@@ -16,7 +17,7 @@ export default function Data() {
   // let startnumber = Number(limitnstart.split('&')[1].replace('_start=', ''))
 
   // const [start, setStart] = useState(startnumber)
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(null)
   // const [currentPage, setCurrentPage] = useState(1)
 
   const prevHandler = () => {
@@ -61,6 +62,7 @@ export default function Data() {
   let lastPage = Number(Math.ceil(count / limit))
   console.log('CURRENT PAGE: ', filter.currentPage)
   console.log('FILTER IN DATA: ', filter.filter)
+
   const fetchProjects = (filter) =>
     fetch('https://peaceful-ridge-63546.herokuapp.com/components' + filter).then((res) =>
       res.json()
@@ -75,17 +77,26 @@ export default function Data() {
   return (
     <div>
       {isLoading ? (
-        <div>Loading...</div>
+        <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8'>
+          <YoutubeFresh />
+          <YoutubeFresh />
+          <YoutubeFresh />
+          <YoutubeFresh />
+          <YoutubeFresh />
+          <YoutubeFresh />
+        </div>
       ) : isError ? (
         <div>Error: {error.message}</div>
+      ) : count == 0 ? (
+        <div className='mb-6'>No Results Found!</div>
       ) : (
-        <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
+        <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8'>
           {data.map((project) => (
-            <div key={project.id} className='PRODUCT group relative mb-3'>
-              <div className='border-4 border-transparent hover:border-indigo-600 p-1 w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden lg:h-80 lg:aspect-none'>
+            <div key={project.id} className='PRODUCT group relative mb-6'>
+              <div className='border-4 border-transparent hover:border-indigo-600 p-1 w-full rounded-md overflow-hidden'>
                 <ImageComponentity
-                  alt={project.image.formats.thumbnail.name}
-                  src={project.image.formats.thumbnail.url}
+                  alt={project.image.formats.small.name}
+                  src={project.image.formats.small.url}
                 />
               </div>
               <div className='mt-4 text-left'>
