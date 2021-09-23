@@ -12,8 +12,7 @@ function setCharAt(str, index, chr) {
 export default function Data() {
   const { filter, setFilter } = React.useContext(FilterContext)
 
-  let limitnstart = filter.filter.split('&categories.slug=').shift()
-  let limit = Number(limitnstart.split('&')[0].replace('?_limit=', ''))
+  let limit = Number(filter.filter.split('&')[0].replace('?_limit=', ''))
   // let startnumber = Number(limitnstart.split('&')[1].replace('_start=', ''))
 
   // const [start, setStart] = useState(startnumber)
@@ -40,7 +39,7 @@ export default function Data() {
   }
 
   useEffect(() => {
-    fetch('https://peaceful-ridge-63546.herokuapp.com/components/count' + filter.filter)
+    fetch('https://peaceful-ridge-63546.herokuapp.com/sections/count' + filter.filter)
       .then((res) => res.json())
       .then((data) => setCount(Number(data)))
 
@@ -63,14 +62,12 @@ export default function Data() {
   console.log('CURRENT PAGE: ', filter.currentPage)
   console.log('FILTER IN DATA: ', filter.filter)
 
-  const fetchProjects = (filter) =>
-    fetch('https://peaceful-ridge-63546.herokuapp.com/components' + filter).then((res) =>
-      res.json()
-    )
+  const fetchSections = (filter) =>
+    fetch('https://peaceful-ridge-63546.herokuapp.com/sections' + filter).then((res) => res.json())
 
   const { isLoading, isError, error, data, isFetching, isPreviousData } = useQuery(
-    ['projects', filter.filter],
-    () => fetchProjects(filter.filter),
+    ['sections', filter.filter],
+    () => fetchSections(filter.filter),
     { keepPreviousData: true }
   )
 
@@ -91,17 +88,17 @@ export default function Data() {
         <div className='mb-6'>No Results Found!</div>
       ) : (
         <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8'>
-          {data.map((project) => (
-            <div key={project.id} className='PRODUCT group relative mb-6'>
+          {data.map((section) => (
+            <div key={section.id} className='SECTION group relative mb-6'>
               <div className='border-4 border-transparent hover:border-indigo-600 p-1 w-full rounded-md overflow-hidden'>
                 <ImageComponentity
-                  alt={project.image.formats.small.name}
-                  src={project.image.formats.small.url}
+                  alt={section.image.formats.small.name}
+                  src={section.image.formats.small.url}
                 />
               </div>
               <div className='mt-4 text-left'>
                 <h3 className='text-sm text-gray-700 uppercase font-semibold'>
-                  <p>{project.name}</p>
+                  <p>{section.name}</p>
                 </h3>
               </div>
             </div>
