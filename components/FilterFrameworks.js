@@ -49,7 +49,7 @@ export default function FilterFrameworks() {
   ) : isError ? (
     <div>Error: {error.message}</div>
   ) : (
-    <form className='hidden lg:block mb-6'>
+    <form className='hidden lg:block mb-6 pb-6 border-b'>
       <h3 className='sr-only'>Filter</h3>
       <div className=''>
         <h3 className='-my-3 flow-root'>
@@ -59,7 +59,7 @@ export default function FilterFrameworks() {
             aria-controls='filter-section-0'
             aria-expanded='false'
           >
-            <span className='uppercase font-medium text-gray-900'>Filter Frameworks</span>
+            <span className='font-medium text-gray-900'>Frameworks</span>
           </button>
         </h3>
         <div className='pt-3' id='filter-section-0'>
