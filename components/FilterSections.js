@@ -8,15 +8,15 @@ function setCharAt(str, index, chr) {
   return str.substring(0, index) + chr + str.substring(index + 1)
 }
 
-export default function FilterSections() {
+export default function Filtercategorys() {
   const { filter, setFilter } = React.useContext(FilterContext)
   // console.log('FILTER: ', filter)
-  const fetchSections = () =>
-    fetch('https://peaceful-ridge-63546.herokuapp.com/sections').then((res) => res.json())
+  const fetchcategorys = () =>
+    fetch('https://peaceful-ridge-63546.herokuapp.com/categories').then((res) => res.json())
 
   const { isLoading, isError, error, data, isFetching, isPreviousData } = useQuery(
-    'sections',
-    () => fetchSections(),
+    'categories',
+    () => fetchcategorys(),
     { keepPreviousData: true }
   )
 
@@ -24,15 +24,15 @@ export default function FilterSections() {
     const name = evt.target.name
     const value = evt.target.checked
     let newFilter = setCharAt(filter.filter, 17, 0)
-    if (value && !filter.filter.includes(`&section.slug=${name}`)) {
+    if (value && !filter.filter.includes(`&categories.slug=${name}`)) {
       // add to filter
-      newFilter = newFilter + `&section.slug=${name}`
+      newFilter = newFilter + `&categories.slug=${name}`
     } else {
       // remove it from filter
-      newFilter = newFilter.replace(`&section.slug=${name}`, '')
+      newFilter = newFilter.replace(`&categories.slug=${name}`, '')
     }
     console.log('-----------------------')
-    console.log('NEW FILTER Sections: ', newFilter)
+    console.log('NEW FILTER Categories: ', newFilter)
     console.log('-----------------------')
     setFilter({ filter: newFilter, start: 0, currentPage: 1 })
   }
@@ -56,26 +56,26 @@ export default function FilterSections() {
           <button
             type='button'
             className='py-3 text-left w-full text-sm text-gray-400 hover:text-gray-500'
-            aria-controls='filter-section-0'
+            aria-controls='filter-category-0'
             aria-expanded='false'
           >
-            <span className='font-medium text-gray-900'>Sections</span>
+            <span className='font-medium text-gray-900'>Categories</span>
           </button>
         </h3>
-        <div className='pt-3' id='filter-section-0'>
+        <div className='pt-3' id='filter-category-0'>
           <div className='space-y-4'>
-            {data.map((section) => (
-              <div key={section.id} className='flex items-center'>
+            {data.map((category) => (
+              <div key={category.id} className='flex items-center'>
                 <input
-                  name={section.slug}
-                  value={section.slug}
+                  name={category.slug}
+                  value={category.slug}
                   type='checkbox'
                   onChange={handleChange}
-                  checked={filter.filter.includes(`&section.slug=${section.slug}`)}
+                  checked={filter.filter.includes(`&categories.slug=${category.slug}`)}
                   className='h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500'
                 />
                 <label htmlFor='filter-color-0' className='ml-3 text-sm text-gray-600'>
-                  {section.name}
+                  {category.name}
                 </label>
               </div>
             ))}

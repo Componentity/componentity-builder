@@ -4,6 +4,10 @@ import NProgress from 'nprogress' //nprogress module
 import 'nprogress/nprogress.css' //styles of nprogress
 import Layout from './../components/Layout'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import AnnouncementContext from './../components/context/announcement-context'
+
+import React, { useState } from 'react'
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -32,11 +36,15 @@ Router.onRouteChangeComplete = () => {
 }
 
 function MyApp({ Component, pageProps }) {
+  const [announcement, setAnnouncement] = useState(true)
+  const annoucementValue = { announcement, setAnnouncement }
   return (
     <QueryClientProvider client={queryClient}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <AnnouncementContext.Provider value={annoucementValue}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </AnnouncementContext.Provider>
     </QueryClientProvider>
   )
 }
