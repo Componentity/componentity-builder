@@ -90,11 +90,17 @@ export default function Data() {
         <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8'>
           {data.map((section) => (
             <div key={section.id} className='SECTION group relative mb-6'>
-              <div className='border-4 border-transparent hover:border-indigo-600 p-1 w-full rounded-md overflow-hidden'>
-                <ImageComponentity
-                  alt={section.image.formats.small.name}
-                  src={section.image.formats.small.url}
-                />
+              <div className='h-44 border-4 border-transparent hover:border-indigo-600 p-1 w-full rounded-md overflow-hidden'>
+                {section.image ? (
+                  <ImageComponentity
+                    alt={section.image.formats.small.name}
+                    src={section.image.formats.small.url}
+                  />
+                ) : (
+                  <div className='bg-gray-50 h-full w-full flex items-center justify-center opacity-50'>
+                    No Image
+                  </div>
+                )}
               </div>
               <div className='mt-4 text-left'>
                 <h3 className='text-sm text-gray-700 uppercase font-semibold'>
