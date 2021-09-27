@@ -57,7 +57,9 @@ export async function getStaticProps({ params }) {
   const res = await fetch(`https://peaceful-ridge-63546.herokuapp.com/frameworks?slug=${slug}`)
   const frameworks = await res.json()
 
-  console.log('FRAMEWORKS LENGTH: ', frameworks.length)
+  console.log('----------------------------')
+  console.log('FRAMEWORKS IN POROPS: ', frameworks)
+  console.log('----------------------------')
 
   if (frameworks.length <= 0) {
     return {
@@ -89,7 +91,7 @@ export async function getStaticPaths() {
     params: { slug: framework.slug }
   }))
 
-  return { paths, fallback: true }
+  return { paths, fallback: 'blocking' }
 }
 
 export default Frameworks
