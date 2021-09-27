@@ -19,19 +19,19 @@ export default function Post({post}) {
   }
 
 
-  const MyImage = props => {
-    return (
-      <img
-        alt={props.alt}
-        src={props.src}
-        onClick={handleClick}
-      />
-    );
-  };
+  // const MyImage = props => {
+  //   return (
+  //     <img
+  //       alt={props.alt}
+  //       src={props.src}
+  //       onClick={handleClick}
+  //     />
+  //   );
+  // };
 
-  const renderers = {
-    image: MyImage
-  };
+  // const renderers = {
+  //   image: MyImage
+  // };
 
 
 
