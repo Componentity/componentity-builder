@@ -3,6 +3,7 @@ import { useQuery } from 'react-query'
 import FilterContext from './../components/context/filter-context'
 import ImageComponentity from './ImageComponentity'
 import YoutubeFresh from './skeleton/youtubefresh'
+import Link from 'next/link'
 
 function setCharAt(str, index, chr) {
   if (index > str.length - 1) return str
@@ -92,10 +93,14 @@ export default function Data() {
             <div key={section.id} className='SECTION group relative mb-6'>
               <div className='h-44 border-4 border-transparent hover:border-indigo-600 p-1 w-full rounded-md overflow-hidden'>
                 {section.image ? (
-                  <ImageComponentity
+                  <Link href={`components/${section.slug}`}>
+                    <a>
+                      <ImageComponentity
                     alt={section.image.formats.small.name}
                     src={section.image.formats.small.url}
                   />
+                    </a>
+                  </Link>
                 ) : (
                   <div className='bg-gray-50 h-full w-full flex items-center justify-center opacity-50'>
                     No Image
