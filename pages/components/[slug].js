@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import ImageComponentity from '../../components/ImageComponentity'
-// import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown'
+import SyntaxHighlighter from 'react-syntax-highlighter';
+// import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+
 
 
 
@@ -15,7 +19,19 @@ export default function Post({post}) {
   }
 
 
-  
+  const MyImage = props => {
+    return (
+      <img
+        alt={props.alt}
+        src={props.src}
+        onClick={handleClick}
+      />
+    );
+  };
+
+  const renderers = {
+    image: MyImage
+  };
 
 
 
@@ -36,12 +52,16 @@ export default function Post({post}) {
     
   </div>
   
-  <div className="max-w-2xl mx-auto">
-    <div className="mt-3 bg-black text-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
+  <div className="max-w-6xl mx-auto overflow-hidden">
+    <div className="mt-3 rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
         <div className="shadow-md p-8">
-                    {
-                        post[0].code ? post[0].code : 'Code not added yet!'
-                    }
+          <SyntaxHighlighter language="html">
+              {/* <ReactMarkdown children={post[0].code} components={renderers} />
+                 */}
+              {post[0].code}
+          </SyntaxHighlighter>
+          
+        
               </div>
           
             </div>
