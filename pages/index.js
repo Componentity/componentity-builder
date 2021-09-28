@@ -47,12 +47,12 @@ export default function Home({ seo }) {
             <a>Go to pages/frameworks/[slug].js</a>
           </Link>
           <br />
-          <Link href='/types/free'>
-            <a>Go to pages/types/[slug].js</a>
+          <Link href='/plans/free'>
+            <a>Go to pages/plans/[slug].js</a>
           </Link>
           <br />
-          <Link href='/sections/footer'>
-            <a>Go to pages/sections/[slug].js</a>
+          <Link href='/categories/footer'>
+            <a>Go to pages/categories/[slug].js</a>
           </Link>
           <hr />
           <div className='bg-white p-8 my-8'>
