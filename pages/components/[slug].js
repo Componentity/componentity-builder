@@ -44,7 +44,9 @@ export default function Post({ post }) {
         <div className='max-w-6xl mx-auto overflow-hidden'>
           <div className='mt-3 rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal'>
             <div className='shadow-md p-8'>
-              <SyntaxHighlighter language='html'>{post[0].code}</SyntaxHighlighter>
+              {post[0].code && (
+                <SyntaxHighlighter language='html'>{post[0].code}</SyntaxHighlighter>
+              )}
             </div>
           </div>
         </div>
