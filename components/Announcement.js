@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { useQuery } from 'react-query'
 import AnnouncementContext from './../components/context/announcement-context'

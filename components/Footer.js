@@ -1,43 +1,76 @@
+import { useQuery } from 'react-query'
+import Link from 'next/link'
+import CheckboxList from './skeleton/checkboxlist'
+
 export default function Footer() {
+  const fetchFooter = () =>
+    fetch('https://peaceful-ridge-63546.herokuapp.com/footer').then((res) => res.json())
+
+  const { isLoading, isError, error, data, isFetching, isPreviousData } = useQuery(
+    'footer',
+    () => fetchFooter(),
+    {
+      keepPreviousData: true
+    }
+  )
+  if (isLoading) {
+    return (
+      <div className='bg-gray-100 pt-4'>
+        <div className='max-w-screen-xl px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 gap-8 mx-auto'>
+          <CheckboxList />
+          <div className='flex flex-col gap-y-2'>
+            <CheckboxList />
+            <CheckboxList />
+            <CheckboxList />
+            <CheckboxList />
+          </div>
+          <div className='flex flex-col gap-y-2'>
+            <CheckboxList />
+            <CheckboxList />
+            <CheckboxList />
+            <CheckboxList />
+          </div>
+          <div className='flex flex-col gap-y-2'>
+            <CheckboxList />
+            <CheckboxList />
+            <CheckboxList />
+            <CheckboxList />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (isError) {
+    return (
+      <div className='block flex items-center justify-center bg-gray-700 text-red-600 font-semibold'>
+        Error: {error.message}
+      </div>
+    )
+  }
+
+  console.log('DATA: ', data)
+
   return (
-    <div className='bg-gray-100 pt-5'>
-      <div className='max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto'>
+    <div key={data.id} className='bg-gray-100 pt-5'>
+      <div className='max-w-screen-xl px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto'>
         <div className='p-5'>
-          <h3 className='font-bold text-xl text-indigo-600'>Componentity</h3>
+          <Link href={data.Link.href ? data.Link.href : '#'}>
+            <a className=' text-indigo-600 hover:text-indigo-500'>
+              <h3 className='font-bold text-xl'>{data.Link.title}</h3>
+            </a>
+          </Link>
         </div>
-        <div className='p-5'>
-          <div className='text-sm uppercase text-indigo-600 font-bold'>Resources</div>
-          <a className='my-3 block' href='#'>
-            Documentation <span className='text-teal-600 text-xs p-1'></span>
-          </a>
-          <a className='my-3 block' href='#'>
-            Tutorials <span className='text-teal-600 text-xs p-1'></span>
-          </a>
-          <a className='my-3 block' href='#'>
-            Support <span className='text-teal-600 text-xs p-1'>New</span>
-          </a>
-        </div>
-        <div className='p-5'>
-          <div className='text-sm uppercase text-indigo-600 font-bold'>Support</div>
-          <a className='my-3 block' href='#'>
-            Help Center <span className='text-teal-600 text-xs p-1'></span>
-          </a>
-          <a className='my-3 block' href='#'>
-            Privacy Policy <span className='text-teal-600 text-xs p-1'></span>
-          </a>
-          <a className='my-3 block' href='#'>
-            Conditions <span className='text-teal-600 text-xs p-1'></span>
-          </a>
-        </div>
-        <div className='p-5'>
-          <div className='text-sm uppercase text-indigo-600 font-bold'>Contact us</div>
-          <a className='my-3 block' href='#'>
-            XXX XXXX, Floor 4 San Francisco, CA <span className='text-teal-600 text-xs p-1'></span>
-          </a>
-          <a className='my-3 block' href='#'>
-            contact@company.com <span className='text-teal-600 text-xs p-1'></span>
-          </a>
-        </div>
+        {data.sections.map((section) => (
+          <div key={section.id} className='p-5'>
+            <div className='text-sm uppercase text-indigo-600 font-bold'>{section.title}</div>
+            {section.link.map((linkitem) => (
+              <Link key={linkitem.id} href={linkitem.href ? linkitem.href : '#'}>
+                <a className='my-3 block'>{linkitem.title}</a>
+              </Link>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   )
