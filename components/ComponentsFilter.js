@@ -1,7 +1,7 @@
 import Data from './data'
 import React, { useState } from 'react'
 import FilterContext from './../components/context/filter-context'
-import FilterTypes from './FilterTypes'
+import FilterPlans from './FilterPlans'
 import FilterFrameworks from './FilterFrameworks'
 import FilterSections from './FilterSections'
 
@@ -17,7 +17,7 @@ export default function ComponentsFilter({ addonFilter = '' }) {
     <FilterContext.Provider value={filterValue}>
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-10'>
         <div className='lg:col-span-2'>
-          <FilterTypes />
+          <FilterPlans />
           <FilterFrameworks />
           <FilterSections />
         </div>

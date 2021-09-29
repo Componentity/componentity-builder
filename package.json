@@ -12,13 +12,13 @@
   "dependencies": {
     "next": "11.1.2",
     "next-pwa": "^5.2.21",
+    "next-seo": "^4.28.1",
     "next-sitemap": "^1.6.148",
     "nprogress": "^0.2.0",
     "react": "17.0.2",
     "react-content-loader": "^6.0.3",
     "react-dom": "17.0.2",
     "react-html-parser": "^2.0.2",
-    "react-markdown": "^7.0.1",
     "react-query": "^3.24.3",
     "react-share": "^4.4.0",
     "react-syntax-highlighter": "^15.4.4"

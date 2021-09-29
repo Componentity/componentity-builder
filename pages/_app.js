@@ -5,8 +5,8 @@ import 'nprogress/nprogress.css' //styles of nprogress
 import Layout from './../components/Layout'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import AnnouncementContext from './../components/context/announcement-context'
-
 import React, { useState } from 'react'
+import { DefaultSeo } from 'next-seo'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,6 +42,19 @@ function MyApp({ Component, pageProps }) {
     <QueryClientProvider client={queryClient}>
       <AnnouncementContext.Provider value={annoucementValue}>
         <Layout>
+          <DefaultSeo
+            openGraph={{
+              type: 'website',
+              locale: 'en_US',
+              url: 'https://www.componentity.com/',
+              site_name: 'Componentity'
+            }}
+            twitter={{
+              handle: '@componentity',
+              site: '@componentity',
+              cardType: 'summary_large_image'
+            }}
+          />
           <Component {...pageProps} />
         </Layout>
       </AnnouncementContext.Provider>

@@ -8,14 +8,14 @@ function setCharAt(str, index, chr) {
   return str.substring(0, index) + chr + str.substring(index + 1)
 }
 
-export default function FilterTypes() {
+export default function FilterPlans() {
   const { filter, setFilter } = React.useContext(FilterContext)
   // console.log('FILTER: ', filter)
   const fetchTypes = () =>
-    fetch('https://peaceful-ridge-63546.herokuapp.com/types').then((res) => res.json())
+    fetch('https://peaceful-ridge-63546.herokuapp.com/plans').then((res) => res.json())
 
   const { isLoading, isError, error, data, isFetching, isPreviousData } = useQuery(
-    'types',
+    'plans',
     () => fetchTypes(),
     { keepPreviousData: true }
   )
@@ -24,12 +24,12 @@ export default function FilterTypes() {
     const name = evt.target.name
     const value = evt.target.checked
     let newFilter = setCharAt(filter.filter, 17, 0)
-    if (value && !filter.filter.includes(`&section.slug=${name}`)) {
+    if (value && !filter.filter.includes(`&plan.slug=${name}`)) {
       // add to filter
-      newFilter = newFilter + `&type.slug=${name}`
+      newFilter = newFilter + `&plan.slug=${name}`
     } else {
       // remove it from filter
-      newFilter = newFilter.replace(`&type.slug=${name}`, '')
+      newFilter = newFilter.replace(`&plan.slug=${name}`, '')
     }
     console.log('-----------------------')
     console.log('NEW FILTER: ', newFilter)
@@ -59,23 +59,23 @@ export default function FilterTypes() {
             aria-controls='filter-section-0'
             aria-expanded='false'
           >
-            <span className='font-medium text-gray-900'>Types</span>
+            <span className='font-medium text-gray-900'>Plans</span>
           </button>
         </h3>
         <div className='pt-3' id='filter-section-0'>
           <div className='space-y-4'>
-            {data.map((type) => (
-              <div key={type.id} className='flex items-center'>
+            {data.map((plan) => (
+              <div key={plan.id} className='flex items-center'>
                 <input
-                  name={type.slug}
-                  value={type.slug}
+                  name={plan.slug}
+                  value={plan.slug}
                   type='checkbox'
                   onChange={handleChange}
-                  checked={filter.filter.includes(`&type.slug=${type.slug}`)}
+                  checked={filter.filter.includes(`&plan.slug=${plan.slug}`)}
                   className='h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500'
                 />
                 <label htmlFor='filter-color-0' className='ml-3 text-sm text-gray-600'>
-                  {type.name}
+                  {plan.name}
                 </label>
               </div>
             ))}

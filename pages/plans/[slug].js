@@ -1,17 +1,16 @@
-import ComponentsFilter from '../components/ComponentsFilter'
-import Link from 'next/link'
+import ComponentsFilter from '../../components/ComponentsFilter'
 import { NextSeo } from 'next-seo'
 
-export default function Home({ seo }) {
+const plans = ({ seo, slug }) => {
   return (
     <>
       <NextSeo
         title={seo.metaTitle}
         description={seo.metaDescription}
-        canonical='https://www.componentity.com/'
+        canonical={`https://www.componentity.com/plans/${slug}`}
         noindex={seo.preventIndex}
         openGraph={{
-          url: 'https://www.componentity.com',
+          url: `https://www.componentity.com/plans/${slug}`,
           title: seo.metaTitle,
           description: seo.metaDescription,
           images: [
@@ -40,23 +39,10 @@ export default function Home({ seo }) {
       />
       <div className='max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
         <div className='px-4 py-6 sm:px-0'>
-          Homepage: <br />
-          is reusable - done
-          <br />
-          <Link href='/frameworks/bootstrap'>
-            <a>Go to pages/frameworks/[slug].js</a>
-          </Link>
-          <br />
-          <Link href='/plans/free'>
-            <a>Go to pages/plans/[slug].js</a>
-          </Link>
-          <br />
-          <Link href='/categories/footer'>
-            <a>Go to pages/categories/[slug].js</a>
-          </Link>
+          plans Filter: {slug}
           <hr />
           <div className='bg-white p-8 my-8'>
-            <ComponentsFilter addonFilter='&framework.slug=bootstrap' />
+            {slug != undefined && <ComponentsFilter addonFilter={`&plan.slug=${slug}`} />}
           </div>
         </div>
       </div>
@@ -64,16 +50,43 @@ export default function Home({ seo }) {
   )
 }
 
-export async function getStaticProps() {
-  const homepageRes = await fetch('https://peaceful-ridge-63546.herokuapp.com/pages?title=homepage')
-  const homepage = await homepageRes.json()
+export async function getStaticProps({ params }) {
+  const { slug } = params
 
-  const seo = homepage[0].SEO
+  const res = await fetch(`https://peaceful-ridge-63546.herokuapp.com/plans?slug=${slug}`)
+  const plans = await res.json()
+
+  if (plans.length <= 0) {
+    return {
+      notFound: true
+    }
+  }
+
+  const seo = plans[0].SEO
+
+  if (!seo) {
+    return {
+      notFound: true
+    }
+  }
 
   return {
     props: {
-      seo
+      seo,
+      slug
     }
-    // revalidate: 1
   }
 }
+
+export async function getStaticPaths() {
+  const res = await fetch('https://peaceful-ridge-63546.herokuapp.com/plans')
+  const plans = await res.json()
+
+  const paths = plans.map((plan) => ({
+    params: { slug: plan.slug }
+  }))
+
+  return { paths, fallback: 'blocking' }
+}
+
+export default plans
