@@ -15,7 +15,7 @@ export default function Footer() {
   )
   if (isLoading) {
     return (
-      <div className='bg-gray-100 pt-4'>
+      <div className='bg-gray-100 py-4'>
         <div className='max-w-screen-xl px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 gap-8 mx-auto'>
           <CheckboxList />
           <div className='flex flex-col gap-y-2'>
@@ -52,7 +52,7 @@ export default function Footer() {
   console.log('DATA: ', data)
 
   return (
-    <div key={data.id} className='bg-gray-100 pt-5'>
+    <div className='bg-gray-100 p-5 sm:py-8'>
       <div className='max-w-screen-xl px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto'>
         <div className='p-5'>
           <Link href={data.Link.href ? data.Link.href : '#'}>

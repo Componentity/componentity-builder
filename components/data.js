@@ -91,14 +91,14 @@ export default function Data() {
         <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8'>
           {data.map((section) => (
             <div key={section.id} className='SECTION group relative mb-6'>
-              <div className='h-44 border-4 border-transparent hover:border-indigo-600 p-1 w-full rounded-md overflow-hidden'>
+              <div className='h-44 border-4 border-transparent hover:border-indigo-600 w-full rounded-md overflow-hidden'>
                 {section.image ? (
                   <Link href={`components/${section.slug}`}>
                     <a>
                       <ImageComponentity
-                    alt={section.image.formats.small.name}
-                    src={section.image.formats.small.url}
-                  />
+                        alt={section.image.formats.small.name}
+                        src={section.image.formats.small.url}
+                      />
                     </a>
                   </Link>
                 ) : (
@@ -134,7 +134,7 @@ export default function Data() {
                 prevHandler()
               }}
               disabled={filter.start == 0}
-              className='disabled:cursor-not-allowed relative flex items-center justify-center inline-flex items-center px-2 py-2 rounded-l-md border-2 border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50'
+              className='disabled:cursor-not-allowed disabled:bg-gray-300 relative flex items-center justify-center inline-flex items-center px-2 py-2 rounded-l-md border-2 border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50'
             >
               <svg
                 className='h-5 w-5'
@@ -164,7 +164,7 @@ export default function Data() {
               }}
               // Disable the Next start button until we know a next start is available
               disabled={filter.currentPage >= lastPage}
-              className='disabled:cursor-not-allowed relative inline-flex items-center px-2 py-2 rounded-r-md border-2 border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50'
+              className='disabled:cursor-not-allowed disabled:bg-gray-300 relative inline-flex items-center px-2 py-2 rounded-r-md border-2 border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-50'
             >
               <span>Next</span>
               <svg

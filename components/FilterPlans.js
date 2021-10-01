@@ -49,7 +49,7 @@ export default function FilterPlans() {
   ) : isError ? (
     <div>Error: {error.message}</div>
   ) : (
-    <form className='hidden lg:block mb-6 pb-6 border-b'>
+    <form className='block mb-6 pb-6 border-b'>
       <h3 className='sr-only'>Filter</h3>
       <div className=''>
         <h3 className='-my-3 flow-root'>
