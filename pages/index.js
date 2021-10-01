@@ -55,7 +55,7 @@ export default function Home({ seo }) {
             <a>Go to pages/categories/[slug].js</a>
           </Link>
           <hr />
-          <div className='bg-white p-8 my-8'>
+          <div className='bg-white p-4 md:p-8 my-8'>
             <ComponentsFilter addonFilter='&framework.slug=bootstrap' />
           </div>
         </div>

@@ -49,7 +49,7 @@ export default function Filtercategorys() {
   ) : isError ? (
     <div>Error: {error.message}</div>
   ) : (
-    <form className='hidden lg:block pb-6'>
+    <form className='block pb-6'>
       <h3 className='sr-only'>Filter</h3>
       <div className=''>
         <h3 className='-my-3 flow-root'>
